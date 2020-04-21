@@ -2,102 +2,102 @@
 
 Traditional way of writing for loop for arrays:
 
-var colors = ['red','blue','green'];
-for(var i=0; i < colors.length; i++){
-  console.log(colors[i]);
-}
+var colors = ['red','blue','green']; <br/>
+for(var i=0; i < colors.length; i++){ <br/>
+  console.log(colors[i]); <br/>
+} <br/>
 
 Writing using foreach:
 
-colors.forEach(function(color){
- console.log(color);
-});
+colors.forEach(function(color){ <br/>
+ console.log(color); <br/>
+}); <br/>
 
 Another example of forEach to find sum of all the elements in an array
 
-var numbers = [5,2,8,1,3]
+var numbers = [5,2,8,1,3] <br/>
 
-var sum = 0;
-function adder(number){
- sum = sum + number;
-}
-numbers.forEach(adder);
-console.log(sum);
+var sum = 0; <br/>
+function adder(number){ <br/>
+ sum = sum + number; <br/>
+} <br/>
+numbers.forEach(adder); <br/>
+console.log(sum); <br/>
 
 ## map helper
 
-Consider example of doubling numbers in an array in traditional way:
-var numbers1 = [5,2,8,1,3];
-var numbers2 = [];
-for(var i=0; i < numbers1.length; i++){
-  numbers2.push(numbers1[i]*2);
-}
-console.log(numbers2);
+Consider example of doubling numbers in an array in traditional way: <br/>
+var numbers1 = [5,2,8,1,3]; <br/>
+var numbers2 = []; <br/>
+for(var i=0; i < numbers1.length; i++){ <br/>
+  numbers2.push(numbers1[i]*2); <br/>
+} <br/>
+console.log(numbers2); <br/>
 
-doing the same thing using map helper:
-function doubler(number){
-  return number*2;
-}
+doing the same thing using map helper: <br/>
+function doubler(number){ <br/>
+  return number*2; <br/>
+} <br/>
 
-var doubledNumbers = numbers1.map(doubler);
-console.log(doubledNumbers);
+var doubledNumbers = numbers1.map(doubler); <br/>
+console.log(doubledNumbers); <br/>
 
-Another example lets say we need to collect prices of cars from cars object array
-var cars = [
-{model:'Buick',price:'cheap'},
-{model:'Camaro',price:'expensive'}
-]
-var prices = cars.map(function(car){
-  return car.price;
-});
+Another example lets say we need to collect prices of cars from cars object array <br/>
+var cars = [ <br/>
+{model:'Buick',price:'cheap'}, <br/>
+{model:'Camaro',price:'expensive'} <br/>
+] <br/>
+var prices = cars.map(function(car){  <br/>
+  return car.price; <br/>
+}); <br/>
 
 ## filter helper
 
-Consider an example of filter all products of type fruit from a product array:
-var products = [
-  {name:'cucumber',type:'vegetable'},
-   {name:'apple',type:'fruit'},
-    {name:'celery',type:'vegetable'},
-    {name:'orange',type:'fruit'}
-  ];
+Consider an example of filter all products of type fruit from a product array: <br/>
+var products = [ <br/>
+  {name:'cucumber',type:'vegetable'}, <br/>
+   {name:'apple',type:'fruit'}, <br/>
+    {name:'celery',type:'vegetable'}, <br/>
+    {name:'orange',type:'fruit'} <br/>
+  ]; <br/>
 
-var filteredFruitProducts = [];
-for(var i=0; i < products.length; i++){
-    if(products[i].type === 'fruit'){
-  		filteredFruitProducts.push(products[i]);
-		}
-}
-console.log(filteredFruitProducts);
+var filteredFruitProducts = []; <br/>
+for(var i=0; i < products.length; i++){ <br/>
+    if(products[i].type === 'fruit'){ <br/>
+  		filteredFruitProducts.push(products[i]); <br/>
+		} <br/>
+} <br/>
+console.log(filteredFruitProducts); <br/>
 
-Consider the same example using filter helper:
-var filteredFruitProducts = products.filter(function(product){
-	if(product.type === 'fruit'){
-    return true;
-  }
-});
-console.log(filteredFruitProducts);
+Consider the same example using filter helper: <br/>
+var filteredFruitProducts = products.filter(function(product){ <br/>
+	if(product.type === 'fruit'){ <br/>
+    return true; <br/>
+  } <br/>
+}); <br/>
+console.log(filteredFruitProducts); <br/>
 
 Consider another example where you need to filter all vegetables whose price is lesser than 10 and quantity is greater than 5
 
-var products = [
-  {name:'cucumber',type:'vegetable', price:10, quantity: 30},
-   {name:'apple',type:'fruit', price:20, quantity:20},
-    {name:'celery',type:'vegetable', price:9, quantity:10},
-    {name:'orange',type:'fruit', price:15, quantity:5}
-  ];
+var products = [ <br/>
+  {name:'cucumber',type:'vegetable', price:10, quantity: 30}, <br/>
+   {name:'apple',type:'fruit', price:20, quantity:20}, <br/>
+    {name:'celery',type:'vegetable', price:9, quantity:10}, <br/>
+    {name:'orange',type:'fruit', price:15, quantity:5} <br/>
+  ]; <br/>
 
-var filteredVegetables = products.filter(function(product){
-	return product.type === 'vegetable' && product.price < 10 && product.quantity > 5
-});
-console.log(filteredVegetables);
+var filteredVegetables = products.filter(function(product){ <br/>
+	return product.type === 'vegetable' && product.price < 10 && product.quantity > 5 <br/>
+}); <br/>
+console.log(filteredVegetables); <br/>
 
 ## find helper
 Consider an example to find a user with particular name in this case Alex from an array of users
-var users = [
-  {name: 'Jill'},
-  {name: 'Alex'},
-  {name: 'Bill'}
-  ]
+var users = [ <br/>
+  {name: 'Jill'}, <br/>
+  {name: 'Alex'}, <br/>
+  {name: 'Bill'} <br/>
+  ] <br/>
 
 var user;
 for(var i=0; i < users.length;i++){
