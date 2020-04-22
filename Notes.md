@@ -263,6 +263,7 @@ So even if I forgot to add milk to my shopping list it got included. <br/>
 
 ## Destructuring
 
+### Destructuring object
 var expense ={ <br/>
   type: 'Business', <br/>
   amount: '$45 USD' <br/>
@@ -279,6 +280,8 @@ const {amount} = expense; <br/>
 The above can further be reduced as shown below: <br/>
 const {type,amount} = expense; <br/>
 The variable name should be identical to the property of the object. Else it will be undefined. <br/>
+
+### Destructuring arguments
 Another way of destructuring arguments: <br/>
 
 var savedFile = { <br/>
@@ -304,6 +307,9 @@ If there is another object such as {color:'red'} that needs to be passed as seco
 function fileSummary({name,extension,size},{color}){ <br/>
   return `The file ${name}.${extension} is of size ${size}`; <br/>
 } <br/>
+
+### Destructuring arrays
+
 
 
 
