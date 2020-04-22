@@ -295,6 +295,10 @@ fileSummary(savedFile); <br/>
 Output will be: <br/>
 The file repost.jpg is of size 14040 <br/>
 
+The above function can be rewritten by destructuring arguments as shown below: <br/>
+function fileSummary({name,extension,size}){ <br/>
+  return `The file ${name}.${extension} is of size ${size}`; <br/>
+} <br/>
 
 
 
