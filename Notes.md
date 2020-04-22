@@ -368,6 +368,43 @@ function signup({email,dateOfBirth,city,username,password}) <br/>
 } <br/>
 Now it can be invoked using signup(user); <br/>
 
+Let us try another use case where destructuring makes code very compatible. <br/>
+Lets say we have an array of points: <br/>
+const points = [ <br/>
+  [4,5], <br/>
+  [10,1], <br/>
+  [0,40] <br/>
+] <br/>
+
+Now we want to convert this to lets say: <br/>
+const pointsObjArray = [ <br/>
+{x:4,y:5}, <br/>
+{x:10,y:1}, <br/>
+{x:0,y:40}, <br/>
+]  <br/>
+
+This can be done in the following way using traditional approach without ES6: <br/>
+points.map(function(pointsArray){ <br/>
+  return { <br/>
+    x:pointsArray[0], <br/>
+    y:pointsArray[1] <br/>
+  } <br/>
+}); <br/>
+
+Using ES6 destructuring this can be done as follows: <br/>
+points.map(([x,y])=>{ <br/>
+  return { <br/>
+    x:x, <br/>
+    y:y <br/>
+  } <br/>
+}); <br/>
+
+Using enhanced object literal this can be further written as: <br/>
+points.map(([x,y])=>{ <br/>
+  return { <br/>
+    x,y <br/>
+  } <br/>
+}); <br/>
 
 
 
