@@ -143,6 +143,7 @@ const toyota = new Toyota({color:'red',title:'Daily Driver'}); <br/>
 console.log(toyota); //Output will be  {"title":"Daily Driver","color":"red"} <br/>
 
 ## When to use classes
+Lot of JS libraries like React and Angular make use of class to extend Components.
 
 
   
