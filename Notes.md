@@ -292,20 +292,8 @@ function fileSummary(file){ <br/>
 } <br/>
 
 fileSummary(savedFile); <br/>
-The output will be:
-
-  extension: 'jpg',
-  name: 'repost',
-  size: 14040
-};
-
-function fileSummary(file){
-  return `The file ${file.name}.${file.extension} is of size ${file.size}`;
-}
-
-fileSummary(savedFile); <br/>
 Output will be: <br/>
-The file repost.jpg is of size 14040
+The file repost.jpg is of size 14040 <br/>
 
 
 
