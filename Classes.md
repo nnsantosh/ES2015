@@ -38,5 +38,16 @@ var x = function(j){ <br/>
 x.prototype.getJ=function(){ <br/>
     return this.j; <br/>
 }; <br/>
-  
+ 
+
+var x1 = new x(1); <br/>
+var x2 = new x(2); <br/>
+x1.getJ(); <br/>
+x2.getJ(); <br/>
+
+So now if we try to invoke getJ function though x1 and x2 do not have those methods they will look up their parent which is prototype.
+It finds it and then uses it from the parent.
+
+
+
   
