@@ -323,6 +323,11 @@ console.log(name2); <br/>
 console.log(name3); <br/>
 console.log(name4); <br/>
 
+We can combine above approach with rest and spread operator as shown below: <br/>
+const[name,...rest] = companies; <br/>
+Now if you type console.log(rest) you will get the following: <br/>
+['Google','Facebook','Netflix'] <br/>
+
 
 
 
