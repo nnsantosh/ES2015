@@ -198,6 +198,55 @@ console.log(usr) <br/>
 Output of usr will be: <br/>
 {"id":7865.072967009408,"admin":true} <br/>
 
+## Rest and Spread Operator
+
+Let us take use case of reduce helper function that we used previously to sum numbers in an array.  <br/>
+function addNumbers(numbers){  <br/>
+  return numbers.reduce((sum,number) => {  <br/>
+    return sum + number;  <br/>
+  },0);  <br/>
+}  <br/>
+addNumbers([1,2,3,4,5]);  <br/>
+Output will be 15  <br/>
+
+Now what if the input to addNumbers was not an array of numbers but multiple numbers. Then in that case the function needs to be modifed as shown below:  <br/>
+function addNumbers(num1,num2,num3,num4,num5){  <br/>
+  const numbers = [num1,num2,num3,num4,num5];  <br/>
+  return numbers.reduce((sum,number) => {  <br/>
+    return sum + number;  <br/>
+  },0);  <br/>
+}  <br/>
+addNumbers(1,2,3,4,5);  <br/>
+Output will be 15  <br/>
+
+Now in the above case we were aware of the number of arguments to the function. But what if we do know the number of arguments then in such case you can use Rest operator as shown below:  <br/>
+
+function addNumbers(...numbers){  <br/>
+  return numbers.reduce((sum,number) => {  <br/>
+    return sum + number;  <br/>
+  },0);  <br/>
+}  <br/>
+addNumbers(1,2,3,4,5,6,7,8,9);  <br/>
+
+This would work with any number of arguments to the function.  <br/>
+So rest operator is used in function arguments whenever we want to capture list of arguments.  <br/>
+So rest operator is used to gather arguments.  <br/>
+Similarly there is spread operator that is used to do exactly opposite that is spread the arguments.  <br/>
+
+Let us say we want to combine two arrays:  <br/>
+const defaultColors = ['red','green'];  <br/>
+const userFavouriteColors = ['orange','yellow'];  <br/>
+
+In previous javascript we used to  use concat function as shown below:  <br/>
+defaultColors.concat(userFavouriteColors);  <br/>
+Output will be ['red','green',orange','yellow']  <br/>
+
+Same thing can be achieved with the use of spread operator as shown below:  <br/>
+[ ...defaultColors, ...userFavouriteColors ];  <br/>
+ 
+
+
+
 
 
 
