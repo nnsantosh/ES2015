@@ -309,6 +309,20 @@ function fileSummary({name,extension,size},{color}){ <br/>
 } <br/>
 
 ### Destructuring arrays
+When we destructure objects we pull off properties. Similarly destructuring arrays is about pulling off elements. <br/>
+const companies = [ <br/>
+  'Apple', <br/>
+  'Google', <br/>
+  'Facebook', <br/>
+  'Netflix' <br/>
+  ] <br/>
+
+const [name,name2,name3,name4] = companies; <br/>
+console.log(name); <br/>
+console.log(name2); <br/>
+console.log(name3); <br/>
+console.log(name4); <br/>
+
 
 
 
