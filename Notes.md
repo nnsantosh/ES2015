@@ -328,6 +328,19 @@ const[name,...rest] = companies; <br/>
 Now if you type console.log(rest) you will get the following: <br/>
 ['Google','Facebook','Netflix'] <br/>
 
+### Destructuring objects and arrays together
+
+const companies = [ <br/>
+  {name:'Google', location:'Mountain View'}, <br/>
+  {name:'Facebook', location:'Menlo Park'}, <br/>
+  {name:'Uber', location:'San Francisco'} <br/>
+] <br/>
+
+var locationOfGoogle = companies[0].location; <br/>
+The same thing can be achieved using : <br/>
+const [{location}] = companies; <br/>
+We pulled out the first element of array and then the property location of the first element of the array <br/>
+So output can be seen using console.log(location) and it will be Mountain View <br/>
 
 
 
