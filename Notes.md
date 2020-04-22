@@ -261,6 +261,10 @@ validateShoppingList('oranges','bread','eggs'); <br/>
 Output will be: ["milk","oranges","bread","eggs"] <br/>
 So even if I forgot to add milk to my shopping list it got included. <br/>
 
+## Destructuring
+
+
+
 
 
 
