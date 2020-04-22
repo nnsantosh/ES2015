@@ -342,6 +342,15 @@ const [{location}] = companies; <br/>
 We pulled out the first element of array and then the property location of the first element of the array <br/>
 So output can be seen using console.log(location) and it will be Mountain View <br/>
 
+Let us take another example: <br/>
+const Google = { <br/>
+  locations: ['Mountain View','New York','London'] <br/>
+} <br/>
+If we had to pull out the first location from locations array we would do the following: <br/>
+Google.locations[0] <br/>
+
+Same thing can be done using destructuring as follows: <br/>
+const {locations:[location]} = Google; <br/>
 
 
 
