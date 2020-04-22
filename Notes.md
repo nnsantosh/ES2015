@@ -352,7 +352,21 @@ Google.locations[0] <br/>
 Same thing can be done using destructuring as follows: <br/>
 const {locations:[location]} = Google; <br/>
 
+One practical use case of destructuring arguments is that we need not worry about the order of the properties that we pull from the object. <br/>
+Example: <br/>
+const user = { <br/>
+  username: 'myusername', <br/>
+  password:'mypassword', <br/>
+  dateOfBirth: '1/1/1990', <br/>
+  city: 'Torrance', <br/>
+  email:'test@gmail.com' <br/>
+} <br/>
 
+Now if we make a method signup that takes user object as input then we can define it using destructuring as follows: <br/>
+function signup({email,dateOfBirth,city,username,password}) <br/>
+  //Do something <br/>
+} <br/>
+Now it can be invoked using signup(user); <br/>
 
 
 
