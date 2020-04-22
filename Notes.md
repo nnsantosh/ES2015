@@ -243,7 +243,23 @@ Output will be ['red','green',orange','yellow']  <br/>
 
 Same thing can be achieved with the use of spread operator as shown below:  <br/>
 [ ...defaultColors, ...userFavouriteColors ];  <br/>
- 
+
+Now if we want to include some additional elements in the output array we would do that as shown below:
+['blue', ...defaultColors, ...userFavouriteColors ]; <br/>
+
+Lets take another example of using rest and spread together. Let us say we want to validate my daily grocery shopping list and ensure that I do not forgot buying milk. I can use below function: <br/>
+
+function validateShoppingList(...items){ <br/>
+  if(items.indexOf('milk') < 0){ <br/>
+    return [ 'milk', ...items ]; <br/>
+  }else{ <br/>
+    return items; <br/>
+  } <br/>
+} <br/>
+
+validateShoppingList('oranges','bread','eggs'); <br/>
+Output will be: ["milk","oranges","bread","eggs"] <br/>
+So even if I forgot to add milk to my shopping list it got included. <br/>
 
 
 
