@@ -300,7 +300,10 @@ function fileSummary({name,extension,size}){ <br/>
   return `The file ${name}.${extension} is of size ${size}`; <br/>
 } <br/>
 
-
+If there is another object such as {color:'red'} that needs to be passed as second argument to the fileSummary function then we can rewrite as: <br/>
+function fileSummary({name,extension,size},{color}){ <br/>
+  return `The file ${name}.${extension} is of size ${size}`; <br/>
+} <br/>
 
 
 
