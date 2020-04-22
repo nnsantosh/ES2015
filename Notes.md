@@ -278,7 +278,34 @@ const {amount} = expense; <br/>
 
 The above can further be reduced as shown below: <br/>
 const {type,amount} = expense; <br/>
+The variable name should be identical to the property of the object. Else it will be undefined. <br/>
+Another way of destructuring arguments: <br/>
 
+var savedFile = { <br/>
+  extension: 'jpg', <br/>
+  name: 'repost', <br/>
+  size: 14040 <br/>
+}; <br/>
+
+function fileSummary(file){ <br/>
+  return `The file ${file.name}.${file.extension} is of size ${file.size}`; <br/>
+} <br/>
+
+fileSummary(savedFile); <br/>
+The output will be:
+
+  extension: 'jpg',
+  name: 'repost',
+  size: 14040
+};
+
+function fileSummary(file){
+  return `The file ${file.name}.${file.extension} is of size ${file.size}`;
+}
+
+fileSummary(savedFile); <br/>
+Output will be: <br/>
+The file repost.jpg is of size 14040
 
 
 
