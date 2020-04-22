@@ -263,6 +263,22 @@ So even if I forgot to add milk to my shopping list it got included. <br/>
 
 ## Destructuring
 
+var expense ={ <br/>
+  type: 'Business', <br/>
+  amount: '$45 USD' <br/>
+}; <br/>
+
+//var type = expense.type; <br/>
+//var amount = expense.amount; <br/>
+
+Notice that in the above commented var you can see that type is repeated and amount is repeated. <br/>
+
+const {type} = expense; <br/>
+const {amount} = expense; <br/>
+
+The above can further be reduced as shown below: <br/>
+const {type,amount} = expense; <br/>
+
 
 
 
