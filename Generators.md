@@ -29,3 +29,29 @@ First time we entered store with cash. <br/>
 Next time we came out of the store with groceries. <br/>
 This is represented by yield. <br/>
 
+We can call yield from generator mulitple times as shown below: <br/>
+function* shopping(){ <br/>
+  //Stuff on the sidewalk <br/>
+  //Walking down the sidewalk <br/>
+  //go into the store with the cash <br/>
+  const stuffFromStore = yield 'cash'; <br/>
+  //Walking to laundry place <br/>
+  const cleanClothes = yield 'laundry'; <br/>
+  //Walk back Home <br/>
+  return [stuffFromStore,cleanClothes]; <br/>
+} <br/>
+ 
+//stuff in the store <br/>
+const gen = shopping(); <br/>
+gen.next(); //leaving our house <br/>
+gen.next('groceries'); <br/>
+gen.next('clean clothes'); <br/>
+
+Output will be: <br/>
+
+{"value":"cash","done":false} <br/> 
+{"value":"laundry","done":false} <br/> 
+{"value":["groceries","clean clothes"],"done":true} <br/>
+
+
+
