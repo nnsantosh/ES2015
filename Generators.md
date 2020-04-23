@@ -174,12 +174,6 @@ const engineeringTeam = { <br/>
   engineer: 'Dave' <br/>
 }; <br/>
 
-function* TestingTeamIterator(team){ <br/>
-  	yield team.lead; <br/>
-  	yield team.tester; <br/>
-  
-}; <br/>
-
 function* TeamIterator(team){ <br/>
   	yield team.lead; <br/>
   	yield team.manager; <br/>
