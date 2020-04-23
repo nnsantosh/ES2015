@@ -112,4 +112,41 @@ for (let name of TeamIterator(engineeringTeam)){ <br/>
  
  ## Delegation of Generators
  
+Let us take another use case where in the previous example every engineeringTeam will have testingTeam with their own lead and tester. <br/>
+In such a case: <br/>
 
+const testingTeam = { <br/>
+  lead:'Amanda', <br/>
+  tester:'Bill' <br/>
+} <br/>
+
+const engineeringTeam = { <br/>
+  testingTeam, <br/>
+  size: 3, <br/>
+  department: 'Engineering', <br/>
+  lead: 'Jill', <br/>
+  manager: 'Alex', <br/>
+  engineer: 'Dave' <br/>
+} <br/>
+
+function* TestingTeamIterator(team){ <br/>
+  	yield team.lead; <br/>
+  	yield team.tester; <br/>
+  
+} <br/>
+
+function* TeamIterator(team){ <br/> 
+  	yield team.lead; <br/>
+  	yield team.manager; <br/>
+  	yield team.engineer; <br/>
+  const testingTeamGenerator = TestingTeamIterator(team.testingTeam); <br/>
+  yield* testingTeamGenerator; <br/>
+   
+}
+
+const names = []; <br/>
+for (let name of TeamIterator(engineeringTeam)){ <br/>
+     names.push(name); <br/>
+ }
+console.log(names); <br/>
+ Output will be: ["Jill","Alex","Dave","Amanda","Bill"] <br/>
