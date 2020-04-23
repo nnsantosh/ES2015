@@ -97,7 +97,7 @@ const engineeringTeam = { <br/>
   engineer: 'Dave' <br/>
 }
 
-function* TeamIterator(team){
+function* TeamIterator(team){ <br/>
   	yield team.lead; <br/>
   	yield team.manager; <br/>
   	yield team.engineer; <br/>
