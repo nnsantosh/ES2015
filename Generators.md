@@ -21,7 +21,7 @@ const gen = shopping(); <br/>
 gen.next(); //leaving our house Output will be: {"value":"cash","done":false} <br/>
 //Walked into the store <br/>
 //Walking down the aisles <br/>
-//Purchase our stuff
+//Purchase our stuff <br/>
 gen.next('groceries'); //Output will be {"value":"groceries","done":true} <br/>
 
 Whenever we call gen.next we are transitioning from one state to the other. <br/>
