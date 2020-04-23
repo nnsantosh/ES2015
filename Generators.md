@@ -139,8 +139,8 @@ function* TeamIterator(team){ <br/>
   	yield team.lead; <br/>
   	yield team.manager; <br/>
   	yield team.engineer; <br/>
-    __const testingTeamGenerator = TestingTeamIterator(team.testingTeam); <br/>
-    __yield* testingTeamGenerator; <br/>
+    const testingTeamGenerator = TestingTeamIterator(team.testingTeam); <br/>
+    yield* testingTeamGenerator; <br/>
    
 }
 
