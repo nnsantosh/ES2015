@@ -188,4 +188,40 @@ for (let name of TeamIterator(engineeringTeam)){ <br/>
  } <br/>
  console.log(names); <br/>
 Output will be: ["Jill","Alex","Dave","Amanda","Bill"] <br/>
- 
+
+Now in the above example we can implement Symbol.iterator even for the engineering team as shown below:
+const testingTeam = { <br/>
+  lead:'Amanda', <br/>
+  tester:'Bill', <br/>
+  [Symbol.iterator] : function* (){ <br/>
+   	yield this.lead; <br/>
+  	yield this.tester; <br/>
+  } <br/>
+}; <br/>
+
+const engineeringTeam = { <br/>
+  testingTeam, <br/>
+  size: 3, <br/>
+  department: 'Engineering', <br/>
+  lead: 'Jill', <br/>
+  manager: 'Alex', <br/>
+  engineer: 'Dave', <br/>
+  [Symbol.iterator] : function* (){ <br/>
+   	yield this.lead; <br/>
+  	yield this.manager; <br/>
+  	yield this.engineer; <br/>
+  } <br/>
+}; <br/>
+
+function* TeamIterator(team){ <br/>
+  	yield* team; <br/>
+    yield* team.testingTeam; <br/>
+  
+}; <br/>
+
+const names = []; <br/>
+for (let name of TeamIterator(engineeringTeam)){ <br/>
+     names.push(name); <br/>
+ } <br/>
+ console.log(names);
+ Output will be: ["Jill","Alex","Dave","Amanda","Bill"] <br/>
