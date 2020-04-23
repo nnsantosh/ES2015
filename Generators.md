@@ -214,12 +214,8 @@ const engineeringTeam = { <br/>
   } <br/>
 }; <br/>
 
-function* TeamIterator(team){ <br/>
-  	yield* team; <br/>
-}; <br/>
-
 const names = []; <br/>
-for (let name of TeamIterator(engineeringTeam)){ <br/>
+for (let name of engineeringTeam){ <br/>
      names.push(name); <br/>
  } <br/>
  console.log(names);
