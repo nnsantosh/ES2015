@@ -54,4 +54,37 @@ Output will be: <br/>
 {"value":["groceries","clean clothes"],"done":true} <br/>
 
 
+Lets take another example: <br/>
+function* colors(){ <br/>
+  yield 'red'; <br/>
+  yield 'blue'; <br/>
+  yield 'green'; <br/>
+} <br/>
+const gen = colors(); <br/>
+gen.next(); <br/>
+gen.next(); <br/>
+gen.next(); <br/>
+gen.next(); <br/>
+
+Output is: <br/>
+{"value":"red","done":false} <br/>
+{"value":"blue","done":false} <br/>
+{"value":"green","done":false} <br/>
+{"done":true} <br/>
+
+Generators work perfectly with for ..of loop. <br/>
+function* colors(){ <br/>
+  yield 'red'; <br/>
+  yield 'blue'; <br/>
+  yield 'green'; <br/>
+} <br/>
+const myColors = []; <br/>
+for(let color of colors()){ <br/>
+  myColors.push(color); <br/>
+} <br/>
+Every time for a yield statement in the generator the for of loop executes and yields the value. <br/>
+console.log(myColors); <br/>
+The output will be:  <br/>
+3 <br/>
+["red","blue","green"] <br/>
 
