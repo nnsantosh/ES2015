@@ -210,13 +210,12 @@ const engineeringTeam = { <br/>
    	yield this.lead; <br/>
   	yield this.manager; <br/>
   	yield this.engineer; <br/>
+    yield* this.testingTeam; <br/>
   } <br/>
 }; <br/>
 
 function* TeamIterator(team){ <br/>
   	yield* team; <br/>
-    yield* team.testingTeam; <br/>
-  
 }; <br/>
 
 const names = []; <br/>
