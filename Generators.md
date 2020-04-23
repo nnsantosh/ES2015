@@ -88,3 +88,25 @@ The output will be:  <br/>
 3 <br/>
 ["red","blue","green"] <br/>
 
+Example of using generator to loop over properties of object: <br/>
+const engineeringTeam = { <br/>
+  size: 3, <br/>
+  department: 'Engineering', <br/>
+  lead: 'Jill', <br/>
+  manager: 'Alex', <br/>
+  engineer: 'Dave' <br/>
+}
+
+function* TeamIterator(team){
+  	yield team.lead; <br/>
+  	yield team.manager; <br/>
+  	yield team.engineer; <br/>
+}
+
+const names = []; <br/>
+for (let name of TeamIterator(engineeringTeam)){ <br/>
+     names.push(name); <br/>
+ } <br/>
+ console.log(names); <br/>
+ Output will be: ["Jill","Alex","Dave"] <br/>
+
