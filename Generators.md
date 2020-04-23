@@ -109,4 +109,7 @@ for (let name of TeamIterator(engineeringTeam)){ <br/>
  } <br/>
  console.log(names); <br/>
  Output will be: ["Jill","Alex","Dave"] <br/>
+ 
+ ## Delegation of Generators
+ 
 
