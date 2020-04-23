@@ -150,3 +150,48 @@ for (let name of TeamIterator(engineeringTeam)){ <br/>
  }
 console.log(names); <br/>
  Output will be: ["Jill","Alex","Dave","Amanda","Bill"] <br/>
+ 
+ ## Symbol.Iterator
+ Symbol Iterator is a tool that teaches objects how to respond to the for of loop. <br/>
+ 
+ Instead of having separate iterator for testingTeam and using yield* we can do the following: <br/>
+ 
+ const testingTeam = { <br/>
+  lead:'Amanda', <br/>
+  tester:'Bill', <br/>
+  [Symbol.iterator] : function* (){ <br/>
+   	yield this.lead; <br/>
+  	yield this.tester; <br/>
+  } <br/>
+}; <br/>
+
+const engineeringTeam = { <br/>
+  testingTeam, <br/>
+  size: 3, <br/>
+  department: 'Engineering', <br/>
+  lead: 'Jill', <br/>
+  manager: 'Alex', <br/>
+  engineer: 'Dave' <br/>
+}; <br/>
+
+function* TestingTeamIterator(team){ <br/>
+  	yield team.lead; <br/>
+  	yield team.tester; <br/>
+  
+}; <br/>
+
+function* TeamIterator(team){ <br/>
+  	yield team.lead; <br/>
+  	yield team.manager; <br/>
+  	yield team.engineer; <br/>
+    yield* team.testingTeam; <br/>
+  
+}; <br/>
+
+const names = []; <br/>
+for (let name of TeamIterator(engineeringTeam)){ <br/>
+     names.push(name); <br/>
+ } <br/>
+ console.log(names); <br/>
+Output will be: ["Jill","Alex","Dave","Amanda","Bill"] <br/>
+ 
