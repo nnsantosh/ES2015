@@ -33,7 +33,21 @@ const promise = new Promise((resolve,reject) => {
   reject();
   },3000});
 });
-Then the function registered in catch will execute:
+Then the function registered in catch will execute after 3 seconds:
 uh oh!
 
+## Fetch
+ajax requests are made using fetch.
+Example:
+url = https://jsonplaceholder.typicode.com/posts/
+fetch(url);
+fetch returns a promise
+So we can register our callbacks using then and catch
+fetch(url).then(data => console.log(data));
+You will notice that the data that is returned is not the actual data that you expected to see.
+It is just response object.
+For getting data that we actually care about we need to do following:
+fetch(url)
+.then(response => response.json())
+.then(data => console.log(data));
 
